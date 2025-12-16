@@ -4,6 +4,9 @@ import SubscriptionBanner from '@/components/subscription-banner'
 import GraphView from '@/components/graph-view'
 import ScoreChart from '@/components/score-chart'
 import AdvancedFilters from '@/components/advanced-filters'
+import ReportActions from '@/components/report-actions'
+import JobHistory from '@/components/job-history'
+import AuditLog from '@/components/audit-log'
 
 
 export default function ResearchDashboard() {
@@ -20,7 +23,16 @@ return (
 </div>
 
 
+<div className="mt-6">
+<ReportActions />
+</div>
+
+
 <VariantTable />
+
+
+<JobHistory />
+<AuditLog />
 
 
 <div className="mt-10">
