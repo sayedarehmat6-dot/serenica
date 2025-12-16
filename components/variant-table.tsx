@@ -1,34 +1,26 @@
 'use client'
-import { useAnalysisStore } from '@/store/analysis-store'
-
-
 export default function VariantTable() {
-const { results } = useAnalysisStore()
-
-
-if (!results.length) {
-return <p className="text-white/60 mt-6">No results yet.</p>
-}
-
-
 return (
-<table className="mt-8 w-full border border-white/10 text-sm">
-<thead className="bg-white/5">
+<div className="border border-white/10 rounded-xl p-6 mt-6 overflow-x-auto">
+<h3 className="text-lg font-semibold">Variant Table</h3>
+<table className="min-w-full mt-4 text-left text-white/80">
+<thead>
 <tr>
-<th className="p-3 text-left">Variant</th>
-<th className="p-3">Score</th>
-<th className="p-3">Interpretation</th>
+<th className="px-4 py-2">Variant</th>
+<th className="px-4 py-2">Gene</th>
+<th className="px-4 py-2">Score</th>
+<th className="px-4 py-2">Phenotype Match</th>
 </tr>
 </thead>
 <tbody>
-{results.map((r, i) => (
-<tr key={i} className="border-t border-white/10">
-<td className="p-3">{r.variant}</td>
-<td className="p-3 text-center">{r.score}</td>
-<td className="p-3 text-center">{r.interpretation}</td>
+<tr>
+<td className="px-4 py-2">chr1:12345A>T</td>
+<td className="px-4 py-2">TP53</td>
+<td className="px-4 py-2">9.8</td>
+<td className="px-4 py-2">High</td>
 </tr>
-))}
 </tbody>
 </table>
+</div>
 )
 }
