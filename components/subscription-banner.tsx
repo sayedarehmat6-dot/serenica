@@ -1,19 +1,9 @@
 'use client'
-import { useUserStore } from '@/store/user-store'
-import { PLANS } from '@/lib/plans'
-
-
 export default function SubscriptionBanner() {
-const { plan, jobsUsed } = useUserStore()
-const limit = PLANS[plan].maxJobs
-
-
 return (
-<div className="border border-cyan-500/30 bg-cyan-500/10 rounded-xl p-4 mt-4">
-<p className="text-sm">Plan: <strong>{plan}</strong> | Usage: {jobsUsed}/{limit === Infinity ? '∞' : limit}</p>
-{plan === 'FREE' && (
-<a href="/pricing" className="text-cyan-400 underline text-sm">Upgrade to unlock full analysis</a>
-)}
+<div className="p-4 bg-white/10 rounded-xl text-center mb-6">
+<p className="text-white/80">You are currently on the Free Plan. Upgrade to Pro or Enterprise for unlimited analyses and AI insights.</p>
+<button className="mt-2 px-4 py-2 rounded bg-cyan-500 hover:bg-cyan-400">Upgrade Now</button>
 </div>
 )
 }
