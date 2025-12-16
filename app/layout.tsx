@@ -1,0 +1,22 @@
+import './globals.css'
+import Navigation from '@/components/navigation'
+import Footer from '@/components/footer'
+
+
+export const metadata = {
+title: 'Serenica — Next-Generation Bioinformatics Intelligence',
+description: 'AI-powered genomic and multi-omics intelligence platform'
+}
+
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+return (
+<html lang="en">
+<body className="bg-black text-white antialiased">
+<Navigation />
+<main className="min-h-screen">{children}</main>
+<Footer />
+</body>
+</html>
+)
+}
